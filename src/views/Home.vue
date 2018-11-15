@@ -1,0 +1,235 @@
+<template>
+  <div class="home">
+    <div class="page-wrap">
+      <div class="play-list">
+        <mt-swipe :auto="4000">
+          <mt-swipe-item v-for="item in playList" :key="item.img">
+            <img :src="item.img" alt="轮播图图片">
+          </mt-swipe-item>
+        </mt-swipe>
+      </div>
+    <div class="xsg-title">
+      限时购<span>本期活动已结束</span>
+    </div>
+    <div class="xsg-shop">
+      <div class="item-panel" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
+        <span>{{item.icon}}</span>
+        <img :src="item.img" alt="商品">
+        <div class="title">{{item.title}}</div>
+        <div class="describe">{{item.describe}}</div>
+        <div class="price">¥{{item.price}}</div>
+      </div>
+    </div>
+    <div class="active">
+      <div class="yqyl">
+        <div>邀请有礼</div>
+        <div>邀请好友有礼物</div>
+        <img src="@/assets/images/yaoqingyouli.png" alt="邀请有礼">
+      </div>
+      <div class="lqyh">
+        <div>领券优惠</div>
+        <div>领取神券有优惠</div>
+        <img src="@/assets/images/lingquanyouhui.png" alt="领券优惠">
+      </div>
+    </div>
+    <div class="xsg-title">猜你喜欢</div>
+    <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
+      <div class="item-panel">
+        <span>{{item.icon}}</span>
+        <img :src="item.img" alt="商品">
+        <div class="title">{{item.title}}</div>
+        <div class="describe">{{item.describe}}</div>
+        <div class="price">¥{{item.price}}</div>
+      </div>
+    </div>
+    </div>
+    <Footer idd="index"></Footer>
+  </div>
+</template>
+<script>
+import { Swipe, SwipeItem } from "mint-ui";
+import Footer from "@/components/_footer";
+export default {
+  name: "home",
+  components: { Swipe, SwipeItem, Footer },
+  data() {
+    return {
+      playList: [
+        { img: "images/playList/1.jpeg" },
+        { img: "images/playList/2.jpeg" }
+      ],
+      shops: [
+        {
+          id: 1,
+          img: "images/shops/1.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        },
+        {
+          id: 2,
+          img: "images/shops/2.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        },
+        {
+          id: 3,
+          img: "images/shops/3.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        },
+        {
+          id: 4,
+          img: "images/shops/1.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        },
+        {
+          id: 5,
+          img: "images/shops/2.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        },
+        {
+          id: 6,
+          img: "images/shops/3.jpg",
+          title: "高雅3D水漾修护保湿面膜",
+          describe: "全面呵护滋养皮肤，软化和补充水分",
+          price: 298,
+          icon: "特价"
+        }
+      ]
+    };
+  },
+  methods: {
+    tapDetail(item) {
+      this.$router.push(`shopdetail/${item.id}`);
+    }
+  },
+  created() {}
+};
+</script>
+<style lang="stylus">
+.home {
+  .page-wrap {
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+
+  .play-list {
+    height: 3rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .xsg-title {
+    margin: 0.2rem 0;
+    background: #ffffff;
+    height: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 0.3rem;
+    }
+  }
+
+  .xsg-shop {
+    margin-top: 0.2rem;
+    padding: 0.2rem 0;
+    background: #ffffff;
+    display: flex;
+    overflow-x: scroll;
+
+    .item-panel {
+      width: 2rem;
+
+      img {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+
+  .item-panel {
+    position: relative;
+    margin-left: 0.2rem;
+
+    span {
+      position: absolute;
+      top: 0.1rem;
+      right: 0.2rem;
+      background: #fee009;
+      padding: 0.002rem 0.1rem;
+      border-radius: 0.1rem;
+      font-size: 0.24rem;
+    }
+
+    .title {
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .describe {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #999999;
+    }
+
+    .price {
+      color: #be272d;
+    }
+  }
+
+  .active {
+    padding-top: 0.2rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 0.2rem;
+    background: #ffffff;
+
+    img {
+      margin-top: 0.2rem;
+      height: 50%;
+    }
+  }
+
+  .item-shop {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    position: relative;
+
+    .item-panel {
+      overflow: hidden;
+      margin: 0 0.1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+</style>
