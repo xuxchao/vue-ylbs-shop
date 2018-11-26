@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     goback() {
-      this.$store.state.login = true
+      this.$store.commit('login');
       this.$router.go(-1)
     }
   }

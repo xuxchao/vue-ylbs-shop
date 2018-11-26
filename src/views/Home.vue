@@ -54,60 +54,8 @@ export default {
   components: { Swipe, SwipeItem, Footer },
   data() {
     return {
-      playList: [
-        { img: "images/playList/1.jpeg" },
-        { img: "images/playList/2.jpeg" }
-      ],
-      shops: [
-        {
-          id: 1,
-          img: "images/shops/1.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        },
-        {
-          id: 2,
-          img: "images/shops/2.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        },
-        {
-          id: 3,
-          img: "images/shops/3.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        },
-        {
-          id: 4,
-          img: "images/shops/1.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        },
-        {
-          id: 5,
-          img: "images/shops/2.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        },
-        {
-          id: 6,
-          img: "images/shops/3.jpg",
-          title: "高雅3D水漾修护保湿面膜",
-          describe: "全面呵护滋养皮肤，软化和补充水分",
-          price: 298,
-          icon: "特价"
-        }
-      ]
+      playList: [],
+      shops: []
     };
   },
   methods: {
@@ -115,7 +63,14 @@ export default {
       this.$router.push(`shopdetail/${item.id}`);
     }
   },
-  created() {}
+  created() {
+      this.$store.dispatch('getShops').then(res => {
+        this.shops = res.data;      
+      })
+      this.$store.dispatch('getPlayList').then(res => {
+        this.playList = res.data;      
+      })
+  }
 };
 </script>
 <style lang="stylus">

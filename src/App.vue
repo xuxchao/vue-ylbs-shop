@@ -180,4 +180,9 @@ input, textarea {
     background #fee009 !important
     color black !important
 }
+/* radio */
+.mint-radio-core {
+    width: .4rem !important;
+    height: .4rem !important;
+}
 </style>

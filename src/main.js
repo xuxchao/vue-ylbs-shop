@@ -5,6 +5,8 @@ import store from './plugins/store'
 import filter from './plugins/filter'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import axios from 'axios'
+Vue.prototype.$http = axios;
 Vue.use(Mint);
 
 import vueg from 'vueg'
