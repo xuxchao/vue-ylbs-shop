@@ -29,7 +29,13 @@
 </div>
 </template>
 <script>
-export default {};
+export default {
+  name: 'shopCar',
+  data() {
+    return {
+    }
+  }
+};
 </script>
 <style lang="stylus">
 .shop-car {

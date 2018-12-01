@@ -1,7 +1,7 @@
 <template>
-  <div id="_footer" class="is-fixed">
-    <mt-tabbar v-model="selected">
-      <mt-tab-item :id="item.id" v-for="item in footerList" :key="item.id">
+  <div id="_footer" @click.stop='tabClick'>
+    <mt-tabbar v-model="selected" fixed>
+      <mt-tab-item  :id="item.id" v-for="item in footerList" :key="item.id">
         <img slot="icon" :src="item.img">
         {{item.name}}
       </mt-tab-item>
@@ -20,11 +20,16 @@ export default {
     return {
       selected: this.idd,
       footerList: [
-        { id: 'index', name: '首页', img: 'images/footer/car.png'},
+        { id: '', name: '首页', img: 'images/footer/index.png'},
         { id: 'car', name: '购物车', img: 'images/footer/car.png'},
         { id: 'dingdan', name: '订单', img: 'images/footer/dingdan.png'},
         { id: 'person', name: '我的', img: 'images/footer/people.png'}
       ]
+    }
+  },
+  methods: {
+    tabClick() {
+      this.$router.push({path: `/${this.selected}`})
     }
   },
   created() {

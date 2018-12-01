@@ -43,7 +43,7 @@
       </div>
     </div>
     </div>
-    <Footer idd="index"></Footer>
+    <!-- <Footer idd="index"></Footer> -->
   </div>
 </template>
 <script>
@@ -54,6 +54,9 @@ export default {
   components: { Swipe, SwipeItem, Footer },
   data() {
     return {
+      vuegConfig:{
+        forwardAnim: 'fadeIn', //前进动画，默认为fadeInRight
+      },
       playList: [],
       shops: []
     };
@@ -64,12 +67,12 @@ export default {
     }
   },
   created() {
-      this.$store.dispatch('getShops').then(res => {
-        this.shops = res.data;      
-      })
-      this.$store.dispatch('getPlayList').then(res => {
-        this.playList = res.data;      
-      })
+    this.$store.dispatch("getShops").then(res => {
+      this.shops = res.data;
+    });
+    this.$store.dispatch("getPlayList").then(res => {
+      this.playList = res.data;
+    });
   }
 };
 </script>
