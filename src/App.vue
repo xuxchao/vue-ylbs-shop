@@ -12,7 +12,7 @@ export default {
     return {
       transitionName: "slide-left",
       effect: "fade"
-    };
+    }
   },
   watch: {
     $route(to, from) {

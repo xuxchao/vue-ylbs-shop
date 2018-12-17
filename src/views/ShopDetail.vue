@@ -137,7 +137,7 @@ export default {
   methods: {
     shopCar() {
       this.vuegConfig.forwardAnim = 'touchPoint'
-      this.$router.push(`/shopCar`);
+      this.$router.push(`/car`);
     },
     addCar() {},
     pay() {},

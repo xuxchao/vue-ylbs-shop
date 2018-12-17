@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "img": "images/shops/1.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 2,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 2,
+    "img": "images/shops/2.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 3,
+    "img": "images/shops/3.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 4,
+    "img": "images/shops/1.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 5,
+    "img": "images/shops/2.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 6,
+    "img": "images/shops/3.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  }
+]

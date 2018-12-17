@@ -4,6 +4,8 @@ import store from './store'
 import Index from '../views/Index'
 import Home from '../views/Home'
 import ShopCar from '../views/ShopCar'
+import Dingdan from '../views/Dingdan'
+import Person from '../views/Person'
 Vue.use(Router)
 
 const router = new Router({
@@ -28,8 +30,23 @@ const router = new Router({
           component: Home
         },
         {
+          path: 'index',
+          component: Home
+        },
+        {
           path: 'car',
-          component: ShopCar
+          component: ShopCar,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: 'dingdan',
+          component: Dingdan,
+          meta: { requiresAuth: true },
+        },
+        {
+          path: 'person',
+          component: Person,
+          meta: { requiresAuth: true },
         },
       ]
     },
@@ -44,12 +61,6 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "about" */ '@/views/Evaluation.vue')
     },
     {
-      path: '/shopcar',
-      name: 'car',
-      meta: { requiresAuth: true },
-      component: () => import(/* webpackChunkName: "about" */ '@/views/ShopCar.vue')
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "about" */ '@/views/Login.vue')
@@ -58,6 +69,8 @@ const router = new Router({
 })
 // 判断是否需要登录
 router.beforeEach((to, from, next) => {
+  console.log(to.meta.requiresAuth, !store.state.login);
+  
   if (to.meta.requiresAuth && !store.state.login) {
     next({
       path: '/login'

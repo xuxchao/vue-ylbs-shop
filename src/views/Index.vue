@@ -1,7 +1,7 @@
 <template>
   <div id="index">
     <router-view v-transition></router-view>
-    <Footer idd="car"></Footer>
+    <Footer></Footer>
   </div>
 </template>
 <script>

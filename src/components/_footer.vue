@@ -13,29 +13,32 @@ import { Tabbar, TabItem } from "mint-ui";
 export default {
   name: "Footer",
   components: { Tabbar, TabItem },
-  props: {
-    idd: String
-  },
   data() {
     return {
-      selected: this.idd,
+      selected: '',
       footerList: [
-        { id: '', name: '首页', img: 'images/footer/index.png'},
+        { id: 'index', name: '首页', img: 'images/footer/index.png'},
         { id: 'car', name: '购物车', img: 'images/footer/car.png'},
         { id: 'dingdan', name: '订单', img: 'images/footer/dingdan.png'},
-        { id: 'person', name: '我的', img: 'images/footer/people.png'}
+        { id: 'person', name: '我的', img: 'images/footer/person.png'}
       ]
     }
   },
   methods: {
     tabClick() {
+      this.defautIcon()
       this.$router.push({path: `/${this.selected}`})
+    },
+    defautIcon() {
+      this.footerList.map( (value) => {
+        value.img = `images/footer/${value.id}.png` 
+        if (value.id == this.selected) value.img = `images/footer/${this.selected}-c.png` 
+      })
     }
   },
   created() {
-    this.footerList.map( (value) => {
-      if (value.id == this.idd) value.img = `images/footer/${this.idd}-c.png` 
-    })
+    this.selected = this.$route.path.split('/')[1] === '' ? 'index' : this.$route.path.split('/')[1]
+    this.defautIcon()
   }
 };
 </script>

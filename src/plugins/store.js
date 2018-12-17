@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    login: true
+    login: false
   },
   mutations: {
     login (state) {
@@ -16,11 +16,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getShops (state) {
+    getShops () {
       return axios.get('data/shops.json')
     },
-    getPlayList (state) {
+    getPlayList () {
       return axios.get('data/playList.json')
+    },
+    getCarList () {
+      return axios.get('data/carList.json')
     }
   }
 })
