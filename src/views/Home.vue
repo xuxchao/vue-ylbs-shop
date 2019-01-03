@@ -169,7 +169,7 @@ export default {
 
     img {
       margin-top: 0.2rem;
-      height: 50%;
+      height: 1rem;
     }
   }
 

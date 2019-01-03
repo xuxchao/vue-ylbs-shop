@@ -6,20 +6,16 @@ import Home from '../views/Home'
 import ShopCar from '../views/ShopCar'
 import Dingdan from '../views/Dingdan'
 import Person from '../views/Person'
+const shopDetail = () => import(/* webpackChunkName: "shopDetail" */ '@/views/ShopDetail.vue')
+const evaluation = () => import(/* webpackChunkName: "evaluation" */ '@/views/Evaluation.vue')
+const login = () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
 Vue.use(Router)
+
 
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'index',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '@/views/Home.vue')
-    // },
     {
       path: '/',
       name: 'index',
@@ -53,17 +49,17 @@ const router = new Router({
     {
       path: '/shopdetail/:id',
       name: 'shopDetail',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/ShopDetail.vue')
+      component: shopDetail
     },
     {
       path: '/evaluation/:id',
       name: 'evaluation',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/Evaluation.vue')
+      component: evaluation
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/Login.vue')
+      component: login
     }
   ]
 })
