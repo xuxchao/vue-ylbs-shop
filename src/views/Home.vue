@@ -10,6 +10,7 @@
       </div>
     <div class="xsg-title">
       限时购<span>本期活动已结束</span>
+      <a href="~/"></a>
     </div>
     <div class="xsg-shop">
       <div class="item-panel" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
