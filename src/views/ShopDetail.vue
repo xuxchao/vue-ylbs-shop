@@ -1,9 +1,9 @@
 <template>
-  <div class="shop-detail">
+  <div class="panel-shop-detail">
     <yl-header>
       <div slot="title" class="shop-detail-title">
-        <a href="#topp" :class="{active : pageActive==1}" @click="pageClick(1)" >商品</a>
-        <a href="#des" :class="{active : pageActive==2}" @click="pageClick(2)" >详情</a>
+        <a :class="{active : pageActive==1}" @click="pageClick(1)" >商品</a>
+        <a :class="{active : pageActive==2}" @click="pageClick(2)" >详情</a>
       </div>
     </yl-header>
     <div class="play-list">
@@ -27,7 +27,7 @@
     <yl-cell title="运费" content="运费" @click="showPopup('freightPopup')"></yl-cell>
     <yl-cell title="说明" content="假一赔十" icon ></yl-cell>
     <yl-cell title="商品评价" style="margin: .2rem 0" to="/evaluation/123">
-      <div slot="right">
+      <div slot="right" style="display: flex; align-items:center">
         <span style="display: inline-block;margin-right: 0.2rem; color: #ffc107; font-size: 0.38rem;">★</span>2好评
       </div>
     </yl-cell>
@@ -35,7 +35,7 @@
     <mt-popup
       v-model="ggPopup"
       position="bottom">
-      <yl-float @close="showPopup('ggPopup')" title="商品">
+      <yl-float @close="showPopup('ggPopup')" title="商品" style="margin-bottom: 1rem">
         <div slot="content" class="panel">
           <div class="shop-detail">
             <img :src="img" alt="商品图片">
@@ -164,7 +164,8 @@ export default {
 </script>
 
 <style lang="stylus">
-.shop-detail {
+.panel-shop-detail {
+  margin-bottom 1rem
   .panel {
     display: flex;
     flex-direction: column;
@@ -205,18 +206,28 @@ export default {
       .num-panel {
         display: flex;
         margin-top: 0.2rem;
+        align-items: center;
 
         .reduce, .add {
-          width: 0.4rem;
-          border: 1px solid #999999;
+          width: 0.6rem;
+          border-left : 0.01rem solid rgba(153, 153, 153, .9);
+          border-right : 0.01rem solid rgba(153, 153, 153, .9);
+          border-top: 0.01rem solid rgba(153, 153, 153, .9);
+          // border-bottom: 0.01rem solid rgba(153, 153, 153, .9);
           text-align: center;
+          height .5rem
+          line-height .5rem
         }
 
         .text {
           width: 0.6rem;
-          text-align: center;
-          border-top: 1px solid #999999;
-          border-bottom: 1px solid #999999;
+          height .5rem
+          line-height .5rem
+          display flex
+          justify-content center
+          align-content center
+          border-top: 0.01rem solid rgba(153, 153, 153, .9);
+          border-bottom: 0.01rem solid rgba(153, 153, 153, .9);
         }
       }
     }
@@ -271,7 +282,7 @@ export default {
     display: inline-block;
     padding: 0.1rem 0.2rem;
     margin-right: 0.1rem;
-    background-image: url('../assets/images/icon/spxq-yhq.png');
+    background-image: url('/images/icon/spxq-yhq.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }

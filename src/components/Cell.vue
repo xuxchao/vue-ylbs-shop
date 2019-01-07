@@ -11,7 +11,7 @@
         {{right}}
       </slot>
     </div>
-    <div class="icon"><img v-if="!icon" src="@/assets/images/icon/right-icon.png" alt="图标"></div>
+    <img class="icon" v-if="!icon" src="/images/icon/right-icon.png" alt="图标">
   </a>
 </template>
 <script>
@@ -61,6 +61,9 @@ export default {
 
   .yl-cell-right {
     margin-right .1rem
+  }
+  .icon {
+      height .3rem
   }
 }
 </style>

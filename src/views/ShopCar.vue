@@ -33,11 +33,14 @@
     </div>
     <div class="right">提交订单</div>
   </div>
+  <Footer></Footer>
 </div>
 </template>
 <script>
+import Footer from "@/components/_footer";
 export default {
   name: 'shopCar',
+  components: {Footer},
   data() {
     return {
       shops: []
@@ -87,7 +90,7 @@ export default {
     background-position: 0 -0.37rem !important;
   }
   .radio-checkbox-img {
-    background: url('../assets/images/icon/xz@2x.png') no-repeat;
+    background: url('/images/icon/xz@2x.png') no-repeat;
     background-position: 0 0rem;
     background-size: cover;
     width: 0.34rem;

@@ -25,12 +25,12 @@
       <div class="yqyl">
         <div>邀请有礼</div>
         <div>邀请好友有礼物</div>
-        <img src="@/assets/images/yaoqingyouli.png" alt="邀请有礼">
+        <img src="/images/icon/yaoqingyouli.png" alt="邀请有礼">
       </div>
       <div class="lqyh">
         <div>领券优惠</div>
         <div>领取神券有优惠</div>
-        <img src="@/assets/images/lingquanyouhui.png" alt="领券优惠">
+        <img src="/images/icon/lingquanyouhui.png" alt="领券优惠">
       </div>
     </div>
     <div class="xsg-title">猜你喜欢</div>
@@ -44,7 +44,7 @@
       </div>
     </div>
     </div>
-    <!-- <Footer idd="index"></Footer> -->
+    <Footer></Footer>
   </div>
 </template>
 <script>

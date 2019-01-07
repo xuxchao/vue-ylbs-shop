@@ -2,7 +2,7 @@
   <div class="yl-float">
     <yl-header>
       <div slot="title" @click="handleClick('closee')">{{title}}</div>
-      <img  slot="right" @click="handleClick('close')" src="@/assets/images/icon/close.png" alt="">
+      <img  slot="right" @click="handleClick('close')" src="/images/icon/close.png" alt="">
     </yl-header>
     <div class="yl-float-conetnt">
       <slot name="content"></slot>
@@ -14,7 +14,7 @@
   width 100vw
 }
 ._header {
-  border-bottom: 1px solid #999999
+  border-bottom: 0.01rem solid rgba(153, 153, 153, .9);
   margin-bottom .2rem
 }
 .yl-float-conetnt {

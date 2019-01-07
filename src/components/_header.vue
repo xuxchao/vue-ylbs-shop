@@ -8,7 +8,7 @@
     </div>
     <div class="yl-header-right">
       <slot name="right">
-        <img src="@/assets/images/icon/home.png" alt="">
+        <img src="/images/icon/home.png" alt="">
       </slot>
     </div>
   </div>
@@ -36,6 +36,11 @@ export default {
     flex 1
     text-align right
     margin-right .2rem
+
+    img {
+      width .3rem
+      height .3rem
+    }
   }
 }
 </style>
