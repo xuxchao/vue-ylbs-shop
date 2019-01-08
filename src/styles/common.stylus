@@ -63,3 +63,6 @@ input, textarea {
     background-color: #fee009
     color: black
 }
+.mint-tabbar > .mint-tab-item.is-selected {
+    color: #000
+}

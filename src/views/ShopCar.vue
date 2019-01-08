@@ -12,17 +12,13 @@
       <div class="radio-checkbox-panel">
         <span :class="{active: item.check}" @click="toggleCheck(index)" class="radio-checkbox-img"></span>
       </div>
-      <div class="left"><img :src="item.img" alt="商品图片"></div>
-      <div class="middle">
+      <div class="left" @click="godetail(item.id)"><img :src="item.img" alt="商品图片"></div>
+      <div class="middle" @click="godetail(item.id)">
         <div class="title">{{item.title}}</div>
         <div class="price">￥{{item.price}}</div>
       </div>
       <div class="right">
-        <div class="group">
-          <span :style="{color: item.num === 1 ? '#ddd' : '#333'}" @click="reduceNum(index)">-</span>
-          <input type="number" v-model="item.num">
-          <span @click="addNum(index)">+</span>
-        </div>
+        <AddReduce @add="addNum(index)" @reduce="reduceNum(index)" :num="item.num"></AddReduce>
       </div>
     </div>
   </mt-cell-swipe>
@@ -38,9 +34,10 @@
 </template>
 <script>
 import Footer from "@/components/_footer";
+import AddReduce from "@/components/AddReduce";
 export default {
   name: 'shopCar',
-  components: {Footer},
+  components: {Footer, AddReduce},
   data() {
     return {
       shops: []
@@ -63,6 +60,9 @@ export default {
     }
   },
   methods: {
+    godetail(id) {
+      this.$router.push(`/shopdetail/${id}`)
+    },
     addNum(index) {
       this.shops[index].num ++
     },
@@ -86,8 +86,9 @@ export default {
 </script>
 <style lang="stylus">
 .shop-car {
+  margin-bottom 2rem
   .active {
-    background-position: 0 -0.37rem !important;
+    background-position: 0 -0.34rem !important;
   }
   .radio-checkbox-img {
     background: url('/images/icon/xz@2x.png') no-repeat;
@@ -125,7 +126,6 @@ export default {
       }
 
       .right {
-        width: 1.4rem;
         height: 1.4rem;
         display flex
         align-items flex-end
@@ -156,10 +156,12 @@ export default {
     display flex
     justify-content space-between
     align-items center
-    border-top 1px solid #ddd
+    border-top 0.01rem solid #ddd
     position fixed
-    bottom .93rem
+    bottom 1rem
     width: 100vw
+    height 1rem
+    background-color #f8f8f8
 
     .left {
       display flex
@@ -175,10 +177,10 @@ export default {
       }
     }
     .right {
-      height .8rem
+      height 1rem
       width 1.8rem
       text-align center
-      line-height .8rem
+      line-height 1rem
       background rgb(255,214,58)
     }
   }

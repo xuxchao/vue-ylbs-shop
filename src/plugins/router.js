@@ -26,12 +26,10 @@ const router = new Router({
     {
       path: '/car',
       component: ShopCar,
-      meta: { requiresAuth: true },
     },
     {
       path: '/dingdan',
       component: Dingdan,
-      meta: { requiresAuth: true },
     },
     {
       path: '/person',

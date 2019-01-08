@@ -52,5 +52,23 @@
     "num": 12,
     "icon": "特价",
     "check": true
+  },
+  {
+    "id": 7,
+    "img": "images/shops/3.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
+  },
+  {
+    "id": 8,
+    "img": "images/shops/3.jpg",
+    "title": "高雅3D水漾修护保湿面膜",
+    "price": 298,
+    "num": 12,
+    "icon": "特价",
+    "check": true
   }
 ]

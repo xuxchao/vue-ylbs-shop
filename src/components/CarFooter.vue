@@ -1,11 +1,11 @@
 <template>
   <div class="footer-panel">
     <div class="car-footer">
-      <div class="icon-panel kefu" @click="handleClick('customer')">
+      <div class="icon-panel" @click="handleClick('customer')">
         <img src="/images/icon/kefu.png" alt="客服">
         <div>客服</div>
       </div>
-      <div class="icon-panel shop-car" @click="handleClick('shopCar')">
+      <div class="icon-panel" @click="handleClick('shopCar')">
         <img src="/images/icon/car.png" alt="购物车">
         <div>购物车</div>
       </div>

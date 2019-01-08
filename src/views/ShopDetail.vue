@@ -5,6 +5,7 @@
         <a :class="{active : pageActive==1}" @click="pageClick(1)" >商品</a>
         <a :class="{active : pageActive==2}" @click="pageClick(2)" >详情</a>
       </div>
+      <img slot="right" @click="gohome" src="/images/icon/home.png" alt>
     </yl-header>
     <div class="play-list">
       <mt-swipe :auto="4000">
@@ -18,7 +19,7 @@
     <div class="v-price">¥298.00</div>
     <yl-cell title="商品规格" right="请选择" style="margin-bottom: .2rem;" @click="showPopup('ggPopup')"></yl-cell>
     <yl-cell title="领券" content="暂无活动" @click="showPopup('couponsPopup')"> 
-      <span slot="content" style="display: inline-block;width: 4.3rem;overflow: scroll;white-space: nowrap;">
+      <span slot="content" style="display: block;width: 4.3rem;overflow: scroll;white-space: nowrap;">
           <span class="yhq-name">不同仓商品测试</span>
           <span class="yhq-name">不同仓商品测试</span>
       </span>
@@ -46,13 +47,9 @@
           </div>
           <div class="shop-num">
             <div class="num-title">数量</div>
-            <div class="num-panel">
-              <div class="reduce">-</div>
-              <div class="text">1</div>
-              <div class="add">+</div>
-            </div>
+            <AddReduce @add="add" @reduce="reduce" :num="num"></AddReduce>
           </div>
-          <car-footer @customer="customer"></car-footer>
+          <car-footer @customer="customer" @shopCar="shopCar" @addCar="addCar" @pay="pay"></car-footer>
         </div>
       </yl-float>
     </mt-popup>
@@ -86,7 +83,7 @@
         </div>
       </yl-float>
     </mt-popup>
-    <car-footer @customer="customer" @shopCar="shopCar" @addCar="addCar" @pay="pay"></car-footer>
+    <car-footer @customer="customer" @shopCar="shopCar" @addCar="showPopup('ggPopup')" @pay="showPopup('ggPopup')" ></car-footer>
   </div>
 </template>
 <script>
@@ -96,12 +93,12 @@ import YlBadge from "@/components/Badge";
 import YlFloat from "@/components/Float";
 import CarFooter from "@/components/CarFooter";
 import YlCoupons from "@/components/Coupons";
-import { MessageBox } from "mint-ui";
+import AddReduce from "@/components/AddReduce";
+import { MessageBox, Toast } from "mint-ui";
 export default {
-  components: { YlCell, YlHeader, YlBadge, YlFloat, CarFooter, YlCoupons },
+  components: { YlCell, YlHeader, YlBadge, YlFloat, CarFooter, YlCoupons, AddReduce, Toast },
   data() {
     return {
-      vuegConfig: {},
       pageActive: 1,
       ggPopup: false,
       couponsPopup: false,
@@ -131,16 +128,29 @@ export default {
           endTime: new Date(),
           img: "../images/icon/yhq.png"
         }
-      ]
+      ],
+      num: 1
     };
   },
   methods: {
-    shopCar() {
-      this.vuegConfig.forwardAnim = 'touchPoint'
-      this.$router.push(`/car`);
+    gohome() {
+      this.$router.push('/index')
     },
-    addCar() {},
-    pay() {},
+    add() {
+      this.num++
+    },
+    reduce() {
+      if (this.num > 1) this.num--
+    },
+    shopCar() {
+      this.$router.push(`/car`)
+    },
+    addCar() {
+      Toast('成功加入购物车')
+    },
+    pay() {
+      
+    },
     customer() {
       MessageBox({
         title: "电话",
@@ -165,7 +175,7 @@ export default {
 
 <style lang="stylus">
 .panel-shop-detail {
-  margin-bottom 1rem
+  margin-bottom 1.2rem
   .panel {
     display: flex;
     flex-direction: column;
@@ -201,34 +211,6 @@ export default {
 
       .num-title {
         color: #676767;
-      }
-
-      .num-panel {
-        display: flex;
-        margin-top: 0.2rem;
-        align-items: center;
-
-        .reduce, .add {
-          width: 0.6rem;
-          border-left : 0.01rem solid rgba(153, 153, 153, .9);
-          border-right : 0.01rem solid rgba(153, 153, 153, .9);
-          border-top: 0.01rem solid rgba(153, 153, 153, .9);
-          // border-bottom: 0.01rem solid rgba(153, 153, 153, .9);
-          text-align: center;
-          height .5rem
-          line-height .5rem
-        }
-
-        .text {
-          width: 0.6rem;
-          height .5rem
-          line-height .5rem
-          display flex
-          justify-content center
-          align-content center
-          border-top: 0.01rem solid rgba(153, 153, 153, .9);
-          border-bottom: 0.01rem solid rgba(153, 153, 153, .9);
-        }
       }
     }
   }
