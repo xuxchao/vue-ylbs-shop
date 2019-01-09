@@ -11,7 +11,7 @@
         {{right}}
       </slot>
     </div>
-    <img class="icon" v-if="!icon" src="/images/icon/right-icon.png" alt="图标">
+    <img class="icon" v-if="!icon" :src="iconUrl" alt="图标">
   </a>
 </template>
 <script>
@@ -28,6 +28,10 @@ export default {
     to: {
       type: String,
       default: null
+    },
+    iconUrl: {
+      type: String,
+      default: '/images/icon/right-icon.png'
     }
   },
   methods: {

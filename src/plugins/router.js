@@ -9,6 +9,7 @@ const Home = () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
 const ShopCar = () => import(/* webpackChunkName: "ShopCar" */ '@/views/ShopCar.vue')
 const Dingdan = () => import(/* webpackChunkName: "Dingdan" */ '@/views/Dingdan.vue')
 const Person = () => import(/* webpackChunkName: "Person" */ '@/views/Person.vue')
+const Pay = () => import(/* webpackChunkName: "Pay" */ '@/views/Pay.vue')
 Vue.use(Router)
 
 const router = new Router({
@@ -50,6 +51,11 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/pay',
+      name: 'pay',
+      component: Pay
     }
   ]
 })
