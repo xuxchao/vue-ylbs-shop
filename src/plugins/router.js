@@ -7,9 +7,10 @@ const Evaluation = () => import(/* webpackChunkName: "evaluation" */ '@/views/Ev
 const Login = () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
 const Home = () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
 const ShopCar = () => import(/* webpackChunkName: "ShopCar" */ '@/views/ShopCar.vue')
-const Dingdan = () => import(/* webpackChunkName: "Dingdan" */ '@/views/Dingdan.vue')
+const OrderList = () => import(/* webpackChunkName: "OrderList" */ '@/views/OrderList.vue')
 const Person = () => import(/* webpackChunkName: "Person" */ '@/views/Person.vue')
-const Pay = () => import(/* webpackChunkName: "Pay" */ '@/views/Pay.vue')
+const Pay = () => import(/* webpackChunkName: "PaySuccess" */ '@/views/Pay.vue')
+const PaySuccess = () => import(/* webpackChunkName: "PaySuccess" */ '@/views/PaySuccess.vue')
 Vue.use(Router)
 
 const router = new Router({
@@ -29,8 +30,8 @@ const router = new Router({
       component: ShopCar,
     },
     {
-      path: '/dingdan',
-      component: Dingdan,
+      path: '/orderlist',
+      component: OrderList,
     },
     {
       path: '/person',
@@ -56,6 +57,11 @@ const router = new Router({
       path: '/pay',
       name: 'pay',
       component: Pay
+    },
+    {
+      path: '/paysuccess',
+      name: 'paysuccess',
+      component: PaySuccess
     }
   ]
 })

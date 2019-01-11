@@ -23,7 +23,7 @@
         <div class="name">植萃精华气色BB霜</div>
         <div class="price">￥928.00</div>
       </div>
-      <div class="num">X1</div>
+      <div class="num">×1</div>
     </div>
     <yl-cell class="yhq" title="优惠券" @click="showPopup('couponsPopup')"></yl-cell>
     <div class="canku-title">支付方式</div>
@@ -53,7 +53,7 @@
         <span>实付:</span>
         <span class="price">￥928</span>
       </div>
-      <div class="right" @click="toast()">结算</div>
+      <div class="right" @click="toPaySuccess()">结算</div>
     </div>
     <mt-popup v-model="couponsPopup" position="bottom">
       <yl-float @close="showPopup('couponsPopup')" title="优惠券">
@@ -111,6 +111,9 @@ export default {
     },
     toast() {
       Toast("功能开发中");
+    },
+    toPaySuccess() {
+      this.$router.push('/paysuccess')
     }
   }
 };

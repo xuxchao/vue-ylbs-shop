@@ -24,6 +24,9 @@ export default new Vuex.Store({
     },
     getCarList () {
       return axios.get('data/carList.json')
-    }
+    },
+    getOrderList () {
+      return axios.get('data/orders.json')
+    },
   }
 })
