@@ -42,9 +42,7 @@
     </div>
     <Footer></Footer>
   </div>
-  <div v-else>
-    <EmptyLogin></EmptyLogin>
-  </div>
+  <EmptyLogin v-else></EmptyLogin>
   
 </template>
 <script>

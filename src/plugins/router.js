@@ -6,7 +6,7 @@ const ShopDetail = () => import(/* webpackChunkName: "shopDetail" */ '@/views/Sh
 const Evaluation = () => import(/* webpackChunkName: "evaluation" */ '@/views/Evaluation.vue')
 const Login = () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
 const Home = () => import(/* webpackChunkName: "Home" */ '@/views/Home.vue')
-const ShopCar = () => import(/* webpackChunkName: "ShopCar" */ '@/views/ShopCar.vue')
+const Car = () => import(/* webpackChunkName: "Car" */ '@/views/Car.vue')
 const OrderList = () => import(/* webpackChunkName: "OrderList" */ '@/views/OrderList.vue')
 const Person = () => import(/* webpackChunkName: "Person" */ '@/views/Person.vue')
 const Pay = () => import(/* webpackChunkName: "PaySuccess" */ '@/views/Pay.vue')
@@ -27,7 +27,7 @@ const router = new Router({
     },
     {
       path: '/car',
-      component: ShopCar,
+      component: Car,
     },
     {
       path: '/orderlist',

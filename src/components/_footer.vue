@@ -19,7 +19,7 @@ export default {
       footerList: [
         { id: 'index', name: '首页', img: 'images/footer/index.png'},
         { id: 'car', name: '购物车', img: 'images/footer/car.png'},
-        { id: 'dingdan', name: '订单', img: 'images/footer/dingdan.png'},
+        { id: 'orderlist', name: '订单', img: 'images/footer/orderlist.png'},
         { id: 'person', name: '我的', img: 'images/footer/person.png'}
       ]
     }

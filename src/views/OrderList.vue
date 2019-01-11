@@ -1,5 +1,5 @@
 <template>
-  <div class="panel-order-list">
+  <div class="panel-order-list" v-if="$store.state.login">
     <mt-navbar v-model="selected">
       <mt-tab-item id="0">全部</mt-tab-item>
       <mt-tab-item id="1">待付款</mt-tab-item>
@@ -36,12 +36,16 @@
         </div>
       </mt-tab-container-item>
     </mt-tab-container>
+    <Footer></Footer>
   </div>
+  <EmptyLogin v-else></EmptyLogin>
 </template>
 <script>
 import { Navbar, TabItem } from "mint-ui";
+import EmptyLogin from "@/components/EmptyLogin";
+import Footer from "@/components/_footer";
 export default {
-  components: { Navbar, TabItem },
+  components: { Navbar, TabItem, EmptyLogin, Footer },
   data() {
     return {
       selected: "2",
@@ -106,6 +110,7 @@ export default {
 
 <style lang="stylus">
 .panel-order-list {
+  margin-bottom 1.2rem
   .order-num {
     border-bottom: 0.01rem solid #dddddd;
     padding: 0.2rem;

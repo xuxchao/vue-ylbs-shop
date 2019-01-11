@@ -146,11 +146,15 @@ export default {
       this.$router.push(`/car`)
     },
     addCar() {
-      this.ggPopup = !this.ggPopup
-      Toast('成功加入购物车')
+      if (!this.$store.state.login) this.$router.push(`/login`)
+      else {
+        this.ggPopup = !this.ggPopup
+        Toast('成功加入购物车')
+      }
     },
     pay() {
-      this.$router.push(`/pay`)
+      if (!this.$store.state.login) this.$router.push(`/login`)
+      else this.$router.push(`/pay`)
     },
     customer() {
       MessageBox({

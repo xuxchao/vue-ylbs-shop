@@ -1,6 +1,7 @@
 <template>
   <div class="empty-login">
     <img src="/images/empty/zhifchenggong.png" alt>
+    <span>支付成功</span>
     <mt-button
       type="primary"
       class="mint-button--yellow"
@@ -32,6 +33,9 @@ export default {
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
     width: 2rem;
+  }
+  span {
+    margin-bottom: 0.4rem;
   }
 }
 </style>
