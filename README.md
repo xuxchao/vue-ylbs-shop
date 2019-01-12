@@ -5,7 +5,7 @@
 ## 项目地址 [http//:106.12.213.98](http//:106.12.213.98)
 
 ## 项目效果图展示
-![结算页](./README_IMG/9.jpg){width:100px}
+![结算页](./README_IMG/9.jpg){:width:100px}
 ![浮层效果图](./README_IMG/8.jpg)
 ![商品详情页](./README_IMG/7.jpg)
 ![我的页](./README_IMG/6.jpg)
