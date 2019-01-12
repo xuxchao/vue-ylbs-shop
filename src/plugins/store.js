@@ -17,16 +17,19 @@ export default new Vuex.Store({
   },
   actions: {
     getShops () {
-      return axios.get('data/shops.json')
+      return axios.get(`/data/shops.json`)
     },
     getPlayList () {
-      return axios.get('data/playList.json')
+      return axios.get(`/data/playList.json`)
     },
     getCarList () {
-      return axios.get('data/carList.json')
+      return axios.get(`/data/carList.json`)
     },
     getOrderList () {
-      return axios.get('data/orders.json')
+      return axios.get(`/data/orders.json`)
+    },
+    getCouponList () {
+      return axios.get(`/data/coupons.json`)
     },
   }
 })

@@ -2,7 +2,7 @@
   <div class="yl-float">
     <yl-header>
       <div slot="title" @click="handleClick('closee')">{{title}}</div>
-      <img slot="right" @click="handleClick('close')" src="/images/icon/close.png" alt>
+      <img slot="right" @click="handleClick('close')" src="../assects/images/icon/close.png" alt>
     </yl-header>
     <div class="yl-float-conetnt">
       <slot name="content"></slot>

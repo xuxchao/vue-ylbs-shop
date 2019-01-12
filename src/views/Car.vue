@@ -1,5 +1,5 @@
 <template>
-  <div class="shop-car" v-if="$store.state.login">
+  <div class="panel-car" v-if="$store.state.login">
     <mt-cell-swipe
       v-for="(item, index) in shops"
       :key="item.id"
@@ -33,8 +33,9 @@
     </mt-cell-swipe>
     <div class="footer">
       <div class="left">
-        <span class="radio-checkbox-img" :class="{active: allCheck}"></span> 全选
-        <span class="total">合计
+        <span class="radio-checkbox-img" :class="{active: isAllCheck}" @click="allCheck"></span> 全选
+        <span class="total">
+          合计
           <span class="price">￥{{totalPrice}}</span>
         </span>
       </div>
@@ -43,7 +44,6 @@
     <Footer></Footer>
   </div>
   <EmptyLogin v-else></EmptyLogin>
-  
 </template>
 <script>
 import Footer from "@/components/_footer";
@@ -66,7 +66,7 @@ export default {
       });
       return total;
     },
-    allCheck() {
+    isAllCheck() {
       var newLength = this.shops.filter(value => {
         return value.check;
       }).length;
@@ -90,6 +90,10 @@ export default {
     },
     submitOrder() {
       this.$router.push(`/pay`);
+    },
+    allCheck() {
+      let status = this.isAllCheck
+      this.shops.map(item => item.check = !status)
     }
   },
   created() {
@@ -100,7 +104,7 @@ export default {
 };
 </script>
 <style lang="stylus">
-.shop-car {
+.panel-car {
   margin-bottom: 2rem;
 
   .active {
@@ -108,7 +112,7 @@ export default {
   }
 
   .radio-checkbox-img {
-    background: url('/images/icon/xz@2x.png') no-repeat;
+    background: url('../assects/images/icon/xz@2x.png') no-repeat;
     background-position: 0 0rem;
     background-size: cover;
     width: 0.34rem;

@@ -11,6 +11,8 @@ const OrderList = () => import(/* webpackChunkName: "OrderList" */ '@/views/Orde
 const Person = () => import(/* webpackChunkName: "Person" */ '@/views/Person.vue')
 const Pay = () => import(/* webpackChunkName: "PaySuccess" */ '@/views/Pay.vue')
 const PaySuccess = () => import(/* webpackChunkName: "PaySuccess" */ '@/views/PaySuccess.vue')
+const Test = () => import(/* webpackChunkName: "Test" */ '@/views/Test.vue')
+const Coupons = () => import(/* webpackChunkName: "Coupons" */ '@/views/Coupons.vue')
 Vue.use(Router)
 
 const router = new Router({
@@ -62,6 +64,16 @@ const router = new Router({
       path: '/paysuccess',
       name: 'paysuccess',
       component: PaySuccess
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
+    },
+    {
+      path: '/coupons',
+      name: 'coupons',
+      component: Coupons
     }
   ]
 })

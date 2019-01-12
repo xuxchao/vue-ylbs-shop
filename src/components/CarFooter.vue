@@ -2,11 +2,11 @@
   <div class="footer-panel">
     <div class="car-footer">
       <div class="icon-panel" @click="handleClick('customer')">
-        <img src="/images/icon/kefu.png" alt="客服">
+        <img src="../assects/images/icon/kefu.png" alt="客服">
         <div>客服</div>
       </div>
       <div class="icon-panel" @click="handleClick('shopCar')">
-        <img src="/images/icon/car.png" alt="购物车">
+        <img src="../assects/images/icon/car.png" alt="购物车">
         <div>购物车</div>
       </div>
       <div class="add-car" @click="handleClick('addCar')">加入购物车</div>

@@ -8,7 +8,7 @@
     </div>
     <div class="yl-header-right">
       <slot name="right">
-        <img src="/images/icon/home.png" alt="">
+        <img src="../assects/images/icon/home.png" alt="">
       </slot>
     </div>
   </div>

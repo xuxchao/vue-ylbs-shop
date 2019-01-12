@@ -1,6 +1,6 @@
 <template>
   <div class="empty-login">
-    <img src="/images/empty/zhifchenggong.png" alt>
+    <img src="../assects/images/empty/zhifchenggong.png" alt>
     <span>支付成功</span>
     <mt-button
       type="primary"

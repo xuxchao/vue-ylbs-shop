@@ -76,11 +76,11 @@ export default {
         case 5:
           reValue = "已取消";
           break;
-        case 6: 
+        case 6:
           reValue = "售后处理";
           break;
       }
-      return reValue
+      return reValue;
     }
   },
   methods: {
@@ -110,7 +110,7 @@ export default {
 
 <style lang="stylus">
 .panel-order-list {
-  margin-bottom 1.2rem
+  margin-bottom: 1.2rem;
   .order-num {
     border-bottom: 0.01rem solid #dddddd;
     padding: 0.2rem;

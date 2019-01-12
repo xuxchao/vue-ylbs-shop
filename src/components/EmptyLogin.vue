@@ -6,11 +6,12 @@
   </div>
 </template>
 <script>
+import Logo from "../assects/images/empty/gouwuchekong.png";
 export default {
     props: {
         url: {
             type: String,
-            default: '/images/empty/gouwuchekong.png'
+            default: Logo
         }
     },
     methods: {

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "price": 200,
+    "minPrice": 300,
+    "name": "徐氏优惠券",
+    "startTime": "2019/03/13",
+    "endTime": "2028/05/07"
+  },{
+    "id": 2,
+    "price": 200,
+    "minPrice": 300,
+    "name": "徐氏优惠券",
+    "startTime": "2019/03/13",
+    "endTime": "2028/05/07"
+  }
+]

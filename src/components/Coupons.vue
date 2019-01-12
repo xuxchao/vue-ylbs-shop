@@ -1,6 +1,6 @@
 <template>
   <div class="yl-coupons card">
-    <img :src="img" alt="卡片">
+    <img src="../assects/images/icon/yhq.png" alt="卡片">
     <div class="yl-coupons-price"><span>￥</span>{{price}}</div>
     <div class="max-minus">满{{minPrice}}元可用</div>
     <div class="yl-coupons-name">{{name}}</div>
@@ -12,12 +12,11 @@
 export default {
   name: 'yl-coupons',
   props: {
-    img: String,
     price: Number,
     minPrice: Number,
     name: String,
-    startTime: Date,
-    endTime: Date
+    startTime: String,
+    endTime: String
   }
 }
 </script>

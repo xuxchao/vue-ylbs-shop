@@ -7,15 +7,15 @@
           <span class="tel">12345678910</span>
         </div>
         <div class="bottom">
-          <img src="/images/icon/address.png" alt>
+          <img src="../assects/images/icon/address.png" alt>
           <span>北京市,通州区</span>
         </div>
       </div>
       <div class="right">
-        <img src="/images/icon/right-icon.png" alt>
+        <img src="../assects/images/icon/right-icon.png" alt>
       </div>
     </div>
-    <img class="caitiao" src="/images/decorate/caitiao.png" alt>
+    <img class="caitiao" src="../assects/images/decorate/caitiao.png" alt>
     <div class="canku-title">一龄直营仓</div>
     <div class="shop-content">
       <img src="/images/shops/1.jpg" alt>
@@ -27,7 +27,7 @@
     </div>
     <yl-cell class="yhq" title="优惠券" @click="showPopup('couponsPopup')"></yl-cell>
     <div class="canku-title">支付方式</div>
-    <yl-cell title="微信支付" iconUrl="/images/icon/wx-icon.png"></yl-cell>
+    <yl-cell title="微信支付" :iconUrl="wxIcon"></yl-cell>
     <yl-cell class="yhq" title="发票(非必填)" @click="toast()"></yl-cell>
 
     <div class="resultPrice">
@@ -78,31 +78,14 @@ import YlFloat from "@/components/Float";
 import YlCell from "@/components/Cell";
 import YlCoupons from "@/components/Coupons";
 import { Toast } from "mint-ui";
+import  WxIcon from "../assects/images/icon/wx-icon.png";
 export default {
   components: { YlFloat, YlCell, YlCoupons, Toast },
   data() {
     return {
       couponsPopup: false,
-      coupons: [
-        {
-          id: 1,
-          price: 200,
-          minPrice: 300,
-          name: "徐氏优惠券",
-          startTime: new Date(),
-          endTime: new Date(),
-          img: "../images/icon/yhq.png"
-        },
-        {
-          id: 2,
-          price: 200,
-          minPrice: 300,
-          name: "徐氏优惠券",
-          startTime: new Date(),
-          endTime: new Date(),
-          img: "../images/icon/yhq.png"
-        }
-      ]
+      wxIcon: WxIcon,
+      coupons: []
     };
   },
   methods: {
@@ -115,6 +98,11 @@ export default {
     toPaySuccess() {
       this.$router.push('/paysuccess')
     }
+  },
+  created() {
+    this.$store.dispatch("getCouponList").then(res => {
+      this.coupons = res.data;
+    });
   }
 };
 </script>

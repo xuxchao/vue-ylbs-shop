@@ -8,41 +8,42 @@
           </mt-swipe-item>
         </mt-swipe>
       </div>
-    <div class="xsg-title">
-      限时购<span>本期活动已结束</span>
-      <a href="~/"></a>
-    </div>
-    <div class="xsg-shop">
-      <div class="item-panel" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
-        <span>{{item.icon}}</span>
-        <img :src="item.img" alt="商品">
-        <div class="title">{{item.title}}</div>
-        <div class="describe">{{item.describe}}</div>
-        <div class="price">¥{{item.price}}</div>
+      <div class="xsg-title">
+        限时购
+        <span>本期活动已结束</span>
+        <a href="~/"></a>
       </div>
-    </div>
-    <div class="active">
-      <div class="yqyl">
-        <div>邀请有礼</div>
-        <div>邀请好友有礼物</div>
-        <img src="/images/icon/yaoqingyouli.png" alt="邀请有礼">
+      <div class="xsg-shop">
+        <div class="item-panel" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
+          <span>{{item.icon}}</span>
+          <img :src="item.img" alt="商品">
+          <div class="title">{{item.title}}</div>
+          <div class="describe">{{item.describe}}</div>
+          <div class="price">¥{{item.price}}</div>
+        </div>
       </div>
-      <div class="lqyh">
-        <div>领券优惠</div>
-        <div>领取神券有优惠</div>
-        <img src="/images/icon/lingquanyouhui.png" alt="领券优惠">
+      <div class="active">
+        <div class="yqyl">
+          <div>邀请有礼</div>
+          <div>邀请好友有礼物</div>
+          <img src="../assects/images/icon/yaoqingyouli.png" alt="邀请有礼">
+        </div>
+        <div class="lqyh" @click="toCoupons">
+          <div>领券优惠</div>
+          <div>领取神券有优惠</div>
+          <img src="../assects/images/icon/lingquanyouhui.png" alt="领券优惠">
+        </div>
       </div>
-    </div>
-    <div class="xsg-title">猜你喜欢</div>
-    <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
-      <div class="item-panel">
-        <span>{{item.icon}}</span>
-        <img :src="item.img" alt="商品">
-        <div class="title">{{item.title}}</div>
-        <div class="describe">{{item.describe}}</div>
-        <div class="price">¥{{item.price}}</div>
+      <div class="xsg-title">猜你喜欢</div>
+      <div class="item-shop" v-for="item in shops" :key="item.id" @click="tapDetail(item)">
+        <div class="item-panel">
+          <span>{{item.icon}}</span>
+          <img :src="item.img" alt="商品">
+          <div class="title">{{item.title}}</div>
+          <div class="describe">{{item.describe}}</div>
+          <div class="price">¥{{item.price}}</div>
+        </div>
       </div>
-    </div>
     </div>
     <Footer></Footer>
   </div>
@@ -55,8 +56,8 @@ export default {
   components: { Swipe, SwipeItem, Footer },
   data() {
     return {
-      vuegConfig:{
-        forwardAnim: 'fadeIn', //前进动画，默认为fadeInRight
+      vuegConfig: {
+        forwardAnim: "fadeIn" //前进动画，默认为fadeInRight
       },
       playList: [],
       shops: []
@@ -65,6 +66,9 @@ export default {
   methods: {
     tapDetail(item) {
       this.$router.push(`shopdetail/${item.id}`);
+    },
+    toCoupons() {
+      this.$router.push(`coupons`);
     }
   },
   created() {

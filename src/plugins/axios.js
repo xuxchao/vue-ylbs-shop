@@ -1,6 +1,5 @@
 import axios from 'axios'
-// axios.defaults.baseURL = 'http://192.168.6.45:8080/';
-
+axios.defaults.baseURL = process.env.VUE_APP_AXIOS_URL
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么

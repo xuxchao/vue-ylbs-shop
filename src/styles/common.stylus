@@ -1,7 +1,7 @@
 html {
     font-size: 13.3333vw;
 }
-.body {
+body {
     height: 100vh;
     background: #f8f8f8;
 }
@@ -72,4 +72,11 @@ input, textarea {
 .mint-navbar .mint-tab-item.is-selected {
     border-bottom: 3px solid #fee009;
     color: #fee009;
+}
+
+
+#app > .router-fade-enter-to {
+     position: fixed;
+     top: 0;
+     width: 100vw;
 }

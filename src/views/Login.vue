@@ -1,6 +1,6 @@
 <template>
   <div class='login'>
-    <img src="/images/icon/logo.png" alt="一龄图标">
+    <img src="../assects/images/icon/logo.png" alt="一龄图标">
     <div class="input-panel">
       <input type="text" placeholder="请输入手机号">
     </div>
@@ -15,6 +15,10 @@
 <script>
 export default {
   name: 'login',
+  data() {
+    return {
+    }
+  },
   methods: {
     goback() {
       this.$store.commit('login');

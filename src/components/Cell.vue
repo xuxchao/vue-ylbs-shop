@@ -15,6 +15,7 @@
   </a>
 </template>
 <script>
+import Icon from '../assects/images/icon/right-icon.png'
 export default {
   name: 'yl-cell',
   props: {
@@ -31,7 +32,7 @@ export default {
     },
     iconUrl: {
       type: String,
-      default: '/images/icon/right-icon.png'
+      default: Icon
     }
   },
   methods: {

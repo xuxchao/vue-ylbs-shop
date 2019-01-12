@@ -5,7 +5,7 @@
         <a :class="{active : pageActive==1}" @click="pageClick(1)" >商品</a>
         <a :class="{active : pageActive==2}" @click="pageClick(2)" >详情</a>
       </div>
-      <img slot="right" @click="gohome" src="/images/icon/home.png" alt>
+      <img slot="right" @click="gohome" src="../assects/images/icon/home.png" alt>
     </yl-header>
     <div class="play-list">
       <mt-swipe :auto="4000">
@@ -59,7 +59,7 @@
       position="bottom">
       <yl-float @close="showPopup('couponsPopup')" title="优惠券">
         <div slot="content" class="panel">
-          <yl-coupons v-for="item in coupons" :key="item.id" :price="item.price" :minPrice="item.minPrice" :name="item.name" :startTime="item.startTime" :endTime="item.endTime" :img="item.img"></yl-coupons>
+          <yl-coupons v-for="item in coupons" :key="item.id" :price="item.price" :minPrice="item.minPrice" :name="item.name" :startTime="item.startTime" :endTime="item.endTime"></yl-coupons>
         </div>
       </yl-float>
     </mt-popup>
@@ -104,31 +104,9 @@ export default {
       couponsPopup: false,
       activePopup: false,
       freightPopup: false,
-      img: "../images/shops/1.jpg",
-      playList: [
-        { img: "../images/playList/1.jpeg" },
-        { img: "../images/playList/2.jpeg" }
-      ],
-      coupons: [
-        {
-          id: 1,
-          price: 200,
-          minPrice: 300,
-          name: "徐氏优惠券",
-          startTime: new Date(),
-          endTime: new Date(),
-          img: "../images/icon/yhq.png"
-        },
-        {
-          id: 2,
-          price: 200,
-          minPrice: 300,
-          name: "徐氏优惠券",
-          startTime: new Date(),
-          endTime: new Date(),
-          img: "../images/icon/yhq.png"
-        }
-      ],
+      img: "/images/shops/1.jpg",
+      playList: [],
+      coupons: [],
       num: 1
     };
   },
@@ -174,7 +152,14 @@ export default {
       this.pageActive = num;
     }
   },
-  created() {}
+  created() {
+    this.$store.dispatch("getPlayList").then(res => {
+      this.playList = res.data;
+    });
+    this.$store.dispatch("getCouponList").then(res => {
+      this.coupons = res.data;
+    });
+  }
 };
 </script>
 
@@ -269,7 +254,7 @@ export default {
     display: inline-block;
     padding: 0.1rem 0.2rem;
     margin-right: 0.1rem;
-    background-image: url('/images/icon/spxq-yhq.png');
+    background-image: url('../assects/images/icon/spxq-yhq.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
