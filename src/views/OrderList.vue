@@ -3,7 +3,7 @@
     <mt-navbar v-model="selected">
       <mt-tab-item id="0">全部</mt-tab-item>
       <mt-tab-item id="1">待付款</mt-tab-item>
-      <mt-tab-item id="2">代发货</mt-tab-item>
+      <mt-tab-item id="2">待发货</mt-tab-item>
       <mt-tab-item id="3">待收货</mt-tab-item>
       <mt-tab-item id="4">已完成</mt-tab-item>
       <mt-tab-item id="5">已取消</mt-tab-item>
@@ -62,10 +62,10 @@ export default {
       let reValue;
       switch (value) {
         case 1:
-          reValue = "代付款";
+          reValue = "待付款";
           break;
         case 2:
-          reValue = "代发货";
+          reValue = "待发货";
           break;
         case 3:
           reValue = "待收货";
