@@ -6,6 +6,7 @@ import './plugins/filter'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import '@/styles/common.stylus'
+
 Vue.use(Mint);
 
 new Vue({

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from './store'
 
+
 const ShopDetail = () => import(/* webpackChunkName: "shopDetail" */ '@/views/ShopDetail.vue')
 const Evaluation = () => import(/* webpackChunkName: "evaluation" */ '@/views/Evaluation.vue')
 const Login = () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
